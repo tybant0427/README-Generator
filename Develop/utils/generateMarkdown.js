@@ -27,6 +27,17 @@
   * [Contributing](#contributing)
   * [Tests](#tests)
   
+  ## License 
+  ${data.license}
+  ## Installation 
+  ${data.install}
+  ## Usage 
+  ${data.usage}
+  ## Contributing 
+  ${data.contributors}
+  ## Tests
+  ${data.test}
+  
 
 
 module.exports = generateMarkdown;

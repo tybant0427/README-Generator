@@ -93,28 +93,4 @@ questions()
 
 
 
-// .then((answers) => {
-//     //console.log(answers);
-//     var readStr = writeToFile(answers);
-//     console.log(readStr);
-//     fs.writeFile('newReadMe.md', readStr, (err) => {
-//         if (err) {
-//             console.log(err);
-//         }
-//             console.log("Successful");
-//         })
-// })
-// .catch(err => {
-//     console.log(err);
-// })
-    
 
-// // TODO: Create a function to write README file
-// function writeToFile(fileName, data) {}
-
-// // TODO: Create a function to initialize app
-// function init() {}
-
-
-// // Function call to initialize app
-// init();

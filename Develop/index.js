@@ -1,11 +1,13 @@
 // require modules 
 const fs = require('fs'); 
 const inquirer = require('inquirer'); 
+const generateMarkdown = require('./utils/generateMarkdown');
 
 
+const questions = () => {
 // TODO: Create an array of questions for user input
 //const questions = [];
-inquirer.prompt([
+return inquirer.prompt([
     {
         type: 'input',
         name: 'GHname',
@@ -24,12 +26,13 @@ inquirer.prompt([
     {
         type: 'input',
         name: 'description',
-        message: 'Please write a brief description of your project.',
+        message: 'Please give a brief description of your project?',
     },
     {
         type: 'list',
         name: 'license',
         message: 'What kind of license would you like?',
+        choices: ["Skip", "ISC", "MIT", "Apache-2.0", "Gpl-3.0"]
     },
     {
         type: 'input',
@@ -51,31 +54,67 @@ inquirer.prompt([
         name: 'test', 
         message: 'What command can be used to run tests?',
         default: 'npm test'
-    },
+    }
 
-])
-.then((answers) => {
-    //console.log(answers);
-    var readStr = writeToFile(answers);
-    console.log(readStr);
+]);
+};
+
+const writeFile = readStr => {
     fs.writeFile('newReadMe.md', readStr, (err) => {
         if (err) {
             console.log(err);
         }
             console.log("Successful");
         })
+};
+
+// function call to initialize program
+questions()
+// getting user answers 
+.then(answers => {
+    return generateMarkdown(answers);
 })
+// using data to display on page 
+.then(readStr => {
+    return writeFile(readStr);
+})
+// catching errors 
 .catch(err => {
-    console.log(err);
+    console.log(err)
 })
+
+
+
+
+
+
+
+
+
+
+
+// .then((answers) => {
+//     //console.log(answers);
+//     var readStr = writeToFile(answers);
+//     console.log(readStr);
+//     fs.writeFile('newReadMe.md', readStr, (err) => {
+//         if (err) {
+//             console.log(err);
+//         }
+//             console.log("Successful");
+//         })
+// })
+// .catch(err => {
+//     console.log(err);
+// })
     
 
-// TODO: Create a function to write README file
-function writeToFile(fileName, data) {}
+// // TODO: Create a function to write README file
+// function writeToFile(fileName, data) {}
 
-// TODO: Create a function to initialize app
-function init() {}
+// // TODO: Create a function to initialize app
+// function init() {}
 
 
-// Function call to initialize app
-init();
+// // Function call to initialize app
+// init();

@@ -1,5 +1,4 @@
-// TODO: Create a function that returns a license badge based on which license is passed in
-// If there is no license, return an empty string
+// Create a function that returns a license badge 
 function renderLicenseBadge(data) {
   if (data === "Apache-2.0") {
     return ("https://img.shields.io/npm/l/s?style=for-the-badge")
@@ -11,8 +10,7 @@ function renderLicenseBadge(data) {
     return ("https://img.shields.io/npm/l/v?style=for-the-badge")
   }}
 
-// TODO: Create a function that returns the license link
-// If there is no license, return an empty string
+// Create a function that returns the license link
 function renderLicenseLink(data) {
   if (data) {
     let chLink = `https://choosealicense.com/licenses/${data}/`
@@ -21,7 +19,7 @@ function renderLicenseLink(data) {
 }
 
 
-// TODO: Create a function to generate markdown for README
+// Create a function to generate markdown for README
 function generateMarkdown(data) {
   let licLink = data.license;
     console.log(licLink)

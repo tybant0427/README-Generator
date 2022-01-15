@@ -19,6 +19,9 @@
 
   ## Usage 
   Answer the questions to quickly generate a nice looking README
+  
+  Link to Screencastify:
+  https://watch.screencastify.com/v/fUBz37IxIGEBV2b4R66N
 
   ## Contributing 
   

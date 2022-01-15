@@ -49,6 +49,10 @@ function generateMarkdown(data) {
 
   ## Contributing 
   ${data.contributors}
+    
+  You can contact me here:  ${data.email}
+
+  or here:  https://github.com/tybant0427
 
   ## Tests
   ${data.test}
